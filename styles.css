@@ -1,0 +1,141 @@
+/* تنسيق عام للصفحة */
+body {
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* تنسيق العنوان */
+header h1 {
+    margin: 20px 0;
+    font-size: 36px;
+    color: #4CAF50;
+}
+
+/* تنسيق الحاوية للأيقونات */
+.icon-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 أعمدة */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+/* تنسيق كل أيقونة */
+.icon-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.icon-box:hover {
+    transform: translateY(-5px);
+}
+
+/* تنسيق الأيقونة */
+.icon-box i {
+    font-size: 40px;
+    color: #4CAF50;
+}
+
+/* تنسيق النص تحت الأيقونة */
+.icon-box p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+/* التصميم الأساسي */
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+/* تصميم خاص للشاشات المتوسطة (أجهزة التابلت) */
+@media (max-width: 768px) {
+    .icon-container {
+        grid-template-columns: repeat(2, 1fr);  /* عمودين بدلًا من 3 */
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .icon-box {
+        width: 130px;
+        height: 130px;
+        padding: 20px;
+    }
+
+    .icon-box i {
+        font-size: 35px;
+    }
+
+    .icon-box p {
+        font-size: 14px;
+    }
+}
+
+/* تصميم خاص للشاشات الصغيرة (هواتف محمولة) */
+@media (max-width: 480px) {
+    .icon-container {
+        grid-template-columns: repeat(1, 1fr);  /* عمود واحد للأيقونات */
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    .icon-box {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .icon-box i {
+        font-size: 30px;
+    }
+
+    .icon-box p {
+        font-size: 14px;
+    }
+}
+
+/* تصميم خاص للشاشات الصغيرة جدًا (مثل 380px) */
+@media (max-width: 380px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .icon-box {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 16px;
+    }
+}
