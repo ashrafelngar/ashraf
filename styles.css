@@ -1,141 +1,135 @@
-/* تنسيق عام للصفحة */
+/* إعدادات عامة */
 body {
-    background-color: #f0f0f0;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+/* رأس الصفحة */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
     text-align: center;
 }
 
-/* تنسيق العنوان */
-header h1 {
-    margin: 20px 0;
-    font-size: 36px;
-    color: #4CAF50;
-}
-
-/* تنسيق الحاوية للأيقونات */
-.icon-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* 3 أعمدة */
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
-}
-
-/* تنسيق كل أيقونة */
-.icon-box {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 30px;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.icon-box:hover {
-    transform: translateY(-5px);
-}
-
-/* تنسيق الأيقونة */
-.icon-box i {
-    font-size: 40px;
-    color: #4CAF50;
-}
-
-/* تنسيق النص تحت الأيقونة */
-.icon-box p {
-    margin-top: 10px;
+header a {
+    color: white;
+    text-decoration: none;
     font-weight: bold;
-    color: #333;
-    font-size: 16px;
+    margin: 0 10px;
 }
 
-/* التصميم الأساسي */
+header a:hover {
+    text-decoration: underline;
+}
+
+/* الحاوية الرئيسية */
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
+    padding: 20px;
 }
 
-/* تصميم خاص للشاشات المتوسطة (أجهزة التابلت) */
+/* صندوق الإعلانات */
+.ad {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.ad:hover {
+    transform: scale(1.02);
+}
+
+.ad img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.ad h2 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+
+.ad p {
+    margin: 0 0 10px;
+}
+
+/* النماذج */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* إدارة المسؤول */
+.admin-panel {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel h1 {
+    color: #007bff;
+}
+
+.admin-panel button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.admin-panel button.reject {
+    background-color: #dc3545;
+}
+
+.admin-panel button:hover {
+    opacity: 0.9;
+}
+
+/* التوافق مع الأجهزة المحمولة */
 @media (max-width: 768px) {
-    .icon-container {
-        grid-template-columns: repeat(2, 1fr);  /* عمودين بدلًا من 3 */
+    header {
+        font-size: 1em;
     }
 
-    header h1 {
-        font-size: 30px;
-    }
-
-    .icon-box {
-        width: 130px;
-        height: 130px;
-        padding: 20px;
-    }
-
-    .icon-box i {
-        font-size: 35px;
-    }
-
-    .icon-box p {
-        font-size: 14px;
-    }
-}
-
-/* تصميم خاص للشاشات الصغيرة (هواتف محمولة) */
-@media (max-width: 480px) {
-    .icon-container {
-        grid-template-columns: repeat(1, 1fr);  /* عمود واحد للأيقونات */
-    }
-
-    header h1 {
-        font-size: 26px;
-    }
-
-    .icon-box {
-        width: 100%;
-        height: auto;
-        padding: 15px;
-    }
-
-    .icon-box i {
-        font-size: 30px;
-    }
-
-    .icon-box p {
-        font-size: 14px;
-    }
-}
-
-/* تصميم خاص للشاشات الصغيرة جدًا (مثل 380px) */
-@media (max-width: 380px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        width: 95%;
-        padding: 10px;
-    }
-
-    header h1 {
-        font-size: 22px;
-    }
-
-    .icon-box {
-        width: 100%;
-        height: auto;
-        padding: 10px;
-    }
-
-    .btn {
-        width: 100%;
-        font-size: 16px;
+    .ad h2 {
+        font-size: 1.2em;
     }
 }
